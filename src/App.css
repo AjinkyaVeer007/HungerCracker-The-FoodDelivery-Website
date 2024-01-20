@@ -1,0 +1,25 @@
+.hidescrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hidescrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .customscrollbar::-webkit-scrollbar {
+    width: 3px !important;
+  }
+  
+  .customscrollbar::-webkit-scrollbar-track {
+    background-color: darkgrey !important;
+  }
+  
+  .customscrollbar::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px #f43f5e !important;
+  }
+  
+  .customscrollbar {
+    scrollbar-width: thin !important;
+    scrollbar-color: #f43f5e #e0e0e0 !important;
+  }

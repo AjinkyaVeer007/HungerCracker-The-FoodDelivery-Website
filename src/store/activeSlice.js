@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  category: null,
+  categoryId: null,
 };
 const activeSlice = createSlice({
   name: "active data",

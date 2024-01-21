@@ -17,7 +17,7 @@ function OnlineRestaurantCard({ data }) {
           Delivered in {data?.sla?.slaString}
         </p>
         <button className="absolute bottom-0 mb-5 rounded-full bg-red px-6 py-2 text-white text-[11px]">
-          Buy Now
+          Order Now
         </button>
       </div>
     </div>

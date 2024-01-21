@@ -23,3 +23,36 @@
     scrollbar-width: thin !important;
     scrollbar-color: #f43f5e #e0e0e0 !important;
   }
+
+  .customDivider {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+  }
+  
+  .customDivider > span {
+    height: 1px;
+    width: 80%;
+    background-color: #dee2e6;
+    position: relative;
+  }
+  
+  .customDivider > span::before,
+  .customDivider > span::after {
+    content: "";
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    background-color: #d6d6d6;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .customDivider > span::before {
+    left: 0;
+  }
+  
+  .customDivider > span::after {
+    right: 0;
+  }

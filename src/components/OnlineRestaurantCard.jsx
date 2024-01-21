@@ -2,28 +2,23 @@ import React from "react";
 
 function OnlineRestaurantCard({ data }) {
   return (
-    <div
-      className="mb-5 hover:scale-95 transition-all ease-in-out"
-      style={{ height: "150px", width: "250px" }}
-    >
-      <div
-        style={{
-          height: "150px",
-          width: "250px",
-          backgroundImage: `url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${data?.cloudinaryImageId})`,
-        }}
-        className="relative rounded-lg bg-no-repeat bg-cover bg-center cursor-pointer"
-      >
-        <div className="rounded-lg absolute bottom-0 left-0 w-[100%] h-2/3 bg-gradient-to-t from-dark"></div>
-        <div className="absolute bottom-0 left-[50%] text-white text-nowrap translate-x-[-50%] mb-2">
-          <div className="font-bold text-xl">
-            {data?.aggregatedDiscountInfoV3?.header}{" "}
-            {data?.aggregatedDiscountInfoV3?.subHeader}
-          </div>
+    <div className="flex items-start gap-10 shadow-md cursor-pointer rounded-lg hover:scale-95 transition-all ease-in-out">
+      <img
+        className="h-[200px] w-[300px] object-cover object-center rounded-lg"
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${data?.cloudinaryImageId}`}
+        alt="img"
+      />
+      <div className="py-2 h-full relative">
+        <div className="font-medium text-base truncate w-[200px]">
+          {data?.name}
         </div>
-      </div>
-      <div className="truncate w-3/4 text-[14px] font-medium my-2">
-        {data?.name}
+        <p className="text-secondary text-[12px]">{data?.locality}</p>
+        <p className="text-red font-medium text-[11px]">
+          Delivered in {data?.sla?.slaString}
+        </p>
+        <button className="absolute bottom-0 mb-5 rounded-full bg-red px-6 py-2 text-white text-[11px]">
+          Buy Now
+        </button>
       </div>
     </div>
   );

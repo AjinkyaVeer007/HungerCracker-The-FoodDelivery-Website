@@ -8,8 +8,8 @@ function Categories() {
     dashboardDetails[0]?.card?.card?.gridElements?.infoWithStyle?.info;
 
   return (
-    <div className="bg-red px-4 py-10 rounded-lg overflow-hidden relative">
-      <div className="font-medium text-white text-2xl mb-4">
+    <div className="p-4 overflow-hidden relative">
+      <div className="font-bold text-primary text-2xl mb-4">
         {dashboardDetails[0]?.card?.card?.header?.title}
       </div>
       <div className="relative">
@@ -18,7 +18,7 @@ function Categories() {
             ? categoryList.map((category) => {
                 return (
                   <img
-                    className="w-[120px] hover:scale-95 transition ease-in-out cursor-pointer rounded-lg"
+                    className="w-[150px] hover:scale-95 transition ease-in-out cursor-pointer rounded-lg"
                     key={category?.id}
                     alt="img"
                     src={
@@ -30,7 +30,7 @@ function Categories() {
               })
             : ""}
         </div>
-        <div className="absolute h-full w-[100px] right-0 bg-gradient-to-l from-red top-0"></div>
+        <div className="absolute h-full w-[100px] right-0 bg-gradient-to-l from-white top-0"></div>
       </div>
     </div>
   );

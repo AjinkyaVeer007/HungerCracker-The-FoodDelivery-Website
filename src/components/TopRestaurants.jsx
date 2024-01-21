@@ -9,8 +9,8 @@ function TopRestaurants() {
     dashboardDetails[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
   return (
-    <div className="my-6 overflow-hidden">
-      <div className="text-primary text-2xl font-medium mb-6">
+    <div className="p-4 overflow-hidden">
+      <div className="text-primary text-2xl font-bold mb-6">
         {dashboardDetails[1]?.card?.card?.header?.title}
       </div>
       <div className="relative overflow-auto hidescrollbar">

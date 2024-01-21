@@ -6,6 +6,7 @@ import { handleDashboardData } from "../store/dashboardDataSlice";
 import Categories from "../components/Categories";
 import TopRestaurants from "../components/TopRestaurants";
 import TopOnlineRestaurants from "../components/TopOnlineRestaurants";
+import Divider from "../components/Divider";
 
 function Dashboard() {
   const dashboardDetails = useSelector((state) => state.dashboardData.data);
@@ -33,9 +34,11 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="mx-6">
+    <div className="mx-20">
       <Categories />
+      <Divider />
       <TopRestaurants />
+      <Divider />
       <TopOnlineRestaurants />
     </div>
   );

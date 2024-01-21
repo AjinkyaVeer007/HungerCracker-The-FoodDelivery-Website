@@ -7,15 +7,12 @@ function TopOnlineRestaurants() {
 
   const restaurantList =
     dashboardDetails[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-
-  console.log(dashboardDetails);
-
   return (
-    <div className="my-6">
-      <div className="text-primary text-2xl mb-6 text-center font-bold">
+    <div className="p-4">
+      <div className="text-primary text-2xl mb-6 font-bold">
         {dashboardDetails[2]?.card?.card?.title}
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-6">
+      <div className="grid grid-cols-2 gap-10">
         {restaurantList
           ? restaurantList.map((resto) => {
               return (

@@ -3,7 +3,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Dashboard from "./herosection/Dashboard";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
 import store from "./store/store";
+
+const persist = persistStore(store);
 
 function App() {
   const router = createBrowserRouter([
@@ -20,7 +24,9 @@ function App() {
   ]);
   return (
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <PersistGate persistor={persist}>
+        <RouterProvider router={router} />
+      </PersistGate>
     </Provider>
   );
 }

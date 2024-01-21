@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 
 function Layout() {
   return (
-    <div>
+    <div className="customscrollbar h-screen w-screen overflow-auto">
       <Navbar />
       <Outlet />
     </div>

@@ -1,8 +1,25 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { handleActive } from "../store/activeSlice";
+import { useNavigate } from "react-router-dom";
 
 function TopRestoCard({ data }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    if (!id) return;
+    dispatch(
+      handleActive({
+        name: "restaurantId",
+        value: id,
+      })
+    );
+    navigate("/restaurantmenu");
+  };
   return (
     <div
+      onClick={() => handleClick(data?.id)}
       style={{
         height: "200px",
         width: "300px",

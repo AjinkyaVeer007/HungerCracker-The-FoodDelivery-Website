@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   categoryId: null,
+  restaurantId: null,
 };
 const activeSlice = createSlice({
   name: "active data",

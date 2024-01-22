@@ -1,6 +1,23 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { handleActive } from "../store/activeSlice";
 
 function OnlineRestaurantCard({ data }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    if (!id) return;
+    dispatch(
+      handleActive({
+        name: "restaurantId",
+        value: id,
+      })
+    );
+    navigate("/restaurantmenu");
+  };
+
   return (
     <div className="flex items-start gap-10 shadow-md cursor-pointer rounded-lg hover:scale-95 transition-all ease-in-out">
       <img
@@ -16,7 +33,10 @@ function OnlineRestaurantCard({ data }) {
         <p className="text-red font-medium text-[11px]">
           Delivered in {data?.sla?.slaString}
         </p>
-        <button className="absolute bottom-0 mb-5 rounded-full bg-red px-6 py-2 text-white text-[11px]">
+        <button
+          onClick={() => handleClick(data?.id)}
+          className="absolute bottom-0 mb-5 rounded-full bg-red px-6 py-2 text-white text-[11px]"
+        >
           Order Now
         </button>
       </div>

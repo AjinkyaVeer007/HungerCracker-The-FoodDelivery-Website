@@ -19,7 +19,7 @@ function Dashboard() {
       method: "get",
       url:
         BASE_URL +
-        "&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+        "restaurants/list/v5?lat=19.0330488&lng=73.0296625&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
     };
 
     const response = await apiHandler(apiData);

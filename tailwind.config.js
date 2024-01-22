@@ -8,6 +8,8 @@ export default {
       white: "#fff",
       dark: "#000",
       red: "#f43f5e",
+      green: "#44ce42",
+      border: "#dee2e6",
       transparent: "transparent",
     },
     extend: {

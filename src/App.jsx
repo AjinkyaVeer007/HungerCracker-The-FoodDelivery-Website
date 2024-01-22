@@ -7,6 +7,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import store from "./store/store";
 import CategoryRestaurants from "./herosection/CategoryRestaurants";
+import RestoMenu from "./herosection/RestoMenu";
 
 const persist = persistStore(store);
 
@@ -23,6 +24,10 @@ function App() {
         {
           path: "categoryrestaurants",
           element: <CategoryRestaurants />,
+        },
+        {
+          path: "restaurantmenu",
+          element: <RestoMenu />,
         },
       ],
     },

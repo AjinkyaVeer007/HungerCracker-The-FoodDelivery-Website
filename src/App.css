@@ -56,3 +56,10 @@
   .customDivider > span::after {
     right: 0;
   }
+
+  .getCentred{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

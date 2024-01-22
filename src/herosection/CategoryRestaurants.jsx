@@ -19,7 +19,7 @@ function CategoryRestaurants() {
       method: "get",
       url:
         BASE_URL +
-        "&collection=" +
+        "restaurants/list/v5?lat=19.0330488&lng=73.0296625&collection=" +
         categoryId +
         "&tags=&sortBy=&filters=&type=rcv2&offset=0&page_type=null",
     };

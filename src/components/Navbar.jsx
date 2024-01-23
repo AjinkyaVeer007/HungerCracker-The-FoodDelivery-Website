@@ -1,12 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Smiley from "../assets/smiley.svg";
 import { useSelector } from "react-redux";
+import { IoChevronBack } from "react-icons/io5";
 
 function Navbar() {
   const cartItem = useSelector((state) => state.cartData.itemArray);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClick = () => {
     cartItem.length ? navigate("/cart") : "";
@@ -14,6 +16,13 @@ function Navbar() {
 
   return (
     <div className="text-center p-4 sticky flex top-0 bg-white z-10">
+      {location.pathname !== "/" && (
+        <IoChevronBack
+          className="cursor-pointer"
+          size={"20px"}
+          onClick={() => navigate(-1)}
+        />
+      )}
       <div
         onClick={() => navigate("/")}
         className="text-4xl ml-auto font-medium text-red font-logo cursor-pointer"

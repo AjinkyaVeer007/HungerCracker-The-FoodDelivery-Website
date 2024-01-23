@@ -10,6 +10,7 @@ export default {
       red: "#f43f5e",
       green: "#44ce42",
       border: "#dee2e6",
+      tomato: "#ff6347",
       transparent: "transparent",
     },
     extend: {

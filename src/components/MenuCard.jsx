@@ -1,6 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { useAddToCart, useRemoveCart } from "../utils/useCart";
 
 function MenuCard({ data }) {
+  const cartItemsId = useSelector((state) => state.cartData.itemArray);
+
+  const handleAddToCart = useAddToCart();
+  const handleRemoveCart = useRemoveCart();
+
   return (
     <div className="rounded-lg border border-border relative">
       {data?.imageId ? (
@@ -26,9 +33,21 @@ function MenuCard({ data }) {
             {Number(data?.defaultPrice ? data?.defaultPrice : data?.price) /
               100}
           </div>
-          <button className="bg-red px-6 py-1 rounded-full text-white">
-            Add
-          </button>
+          {cartItemsId.includes(data?.id) ? (
+            <button
+              onClick={() => handleRemoveCart(data?.id)}
+              className="bg-tomato px-4 py-1 rounded-full text-[13px] text-white"
+            >
+              Remove
+            </button>
+          ) : (
+            <button
+              onClick={() => handleAddToCart(data)}
+              className="bg-red px-4 py-1 rounded-full text-[13px] text-white"
+            >
+              Add
+            </button>
+          )}
         </div>
       </div>
       <div
@@ -36,14 +55,14 @@ function MenuCard({ data }) {
           data?.itemAttribute?.vegClassifier === "NONVEG"
             ? "border-red"
             : "border-green"
-        } absolute h-[13px] w-[13px] border  bg-white top-0 right-0 m-2`}
+        } absolute h-[13px] w-[13px] border  bg-white top-0 right-0 m-2 flex items-center justify-center`}
       >
         <div
           className={`${
             data?.itemAttribute?.vegClassifier === "NONVEG"
               ? "bg-red"
               : "bg-green"
-          } h-[8px] w-[8px]  rounded-full getCentred`}
+          } h-[8px] w-[8px]  rounded-full`}
         ></div>
       </div>
     </div>

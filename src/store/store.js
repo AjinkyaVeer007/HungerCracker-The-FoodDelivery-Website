@@ -11,6 +11,7 @@ import {
 } from "redux-persist";
 import activeSlice from "./activeSlice";
 import dashboardDataSlice from "./dashboardDataSlice";
+import cartSlice from "./cartSlice";
 
 const persistConfig = {
   key: "root",
@@ -20,6 +21,7 @@ const persistConfig = {
 const reducer = combineReducers({
   activeData: activeSlice,
   dashboardData: dashboardDataSlice,
+  cartData: cartSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

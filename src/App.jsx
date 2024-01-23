@@ -8,6 +8,7 @@ import { persistStore } from "redux-persist";
 import store from "./store/store";
 import CategoryRestaurants from "./herosection/CategoryRestaurants";
 import RestoMenu from "./herosection/RestoMenu";
+import Cart from "./herosection/Cart";
 
 const persist = persistStore(store);
 
@@ -28,6 +29,10 @@ function App() {
         {
           path: "restaurantmenu",
           element: <RestoMenu />,
+        },
+        {
+          path: "cart",
+          element: <Cart />,
         },
       ],
     },

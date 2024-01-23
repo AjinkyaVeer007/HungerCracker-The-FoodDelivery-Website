@@ -37,7 +37,7 @@ function OnlineRestaurantCard({ data }) {
           onClick={() => handleClick(data?.id)}
           className="absolute bottom-0 mb-5 rounded-full bg-red px-6 py-2 text-white text-[11px]"
         >
-          Order Now
+          View Menu
         </button>
       </div>
     </div>

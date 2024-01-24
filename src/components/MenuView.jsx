@@ -39,7 +39,7 @@ function MenuView({ data }) {
         </div>
         <div className="absolute right-0 top-0 h-full w-[100px] bg-gradient-to-l from-white"></div>
       </div>
-      <div className="grid grid-cols-6 gap-6 mx-4 mt-6">
+      <div className="grid lg:grid-cols-6 grid-cols-1 gap-6 mx-4 mt-6">
         {menuCardData
           ? menuCardData.map((menu) => {
               return (

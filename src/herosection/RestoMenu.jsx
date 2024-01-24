@@ -4,6 +4,7 @@ import { useGlobalApiHandler } from "../utils/useGlobalApiHandler";
 import { BASE_URL } from "../utils/constant";
 import Divider from "../components/Divider";
 import MenuView from "../components/MenuView";
+import MenuShimmer from "../components/shimmers/MenuShimmer";
 
 function RestoMenu() {
   const restaurantId = useSelector((state) => state.activeData.restaurantId);
@@ -17,8 +18,10 @@ function RestoMenu() {
     charges: "",
   });
   const [menuData, setMenuData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getMenu = async () => {
+    setIsLoading(true);
     const apiData = {
       method: "get",
       url:
@@ -46,6 +49,7 @@ function RestoMenu() {
           }
         );
       setMenuData(filteredData);
+      setIsLoading(false);
     }
   };
 
@@ -54,23 +58,29 @@ function RestoMenu() {
   }, []);
 
   return (
-    <div>
-      <div className="p-4">
-        <div className="font-bold text-primary text-center text-4xl mb-2">
-          {headingData.name}
+    <>
+      {isLoading ? (
+        <MenuShimmer />
+      ) : (
+        <div>
+          <div className="p-4">
+            <div className="font-bold text-primary text-center text-4xl mb-2">
+              {headingData.name}
+            </div>
+            <p className="text-center text-primary text-[12px]">
+              {headingData.location}, {headingData.area}
+            </p>
+            {headingData.charges && (
+              <p className="text-center text-secondary text-[13px] italic">
+                {headingData.charges}
+              </p>
+            )}
+            <Divider />
+            <MenuView data={menuData} />
+          </div>
         </div>
-        <p className="text-center text-primary text-[12px]">
-          {headingData.location}, {headingData.area}
-        </p>
-        {headingData.charges && (
-          <p className="text-center text-secondary text-[13px] italic">
-            {headingData.charges}
-          </p>
-        )}
-        <Divider />
-        <MenuView data={menuData} />
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 

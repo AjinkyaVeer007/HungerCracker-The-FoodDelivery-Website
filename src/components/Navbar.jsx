@@ -30,7 +30,7 @@ function Navbar() {
         )}
         <div
           onClick={() => navigate("/")}
-          className="text-4xl ml-auto font-medium text-red font-logo cursor-pointer"
+          className="lg:text-4xl md:text-3xl text-2xl ml-auto font-medium text-red font-logo cursor-pointer"
         >
           HungerCracker
         </div>

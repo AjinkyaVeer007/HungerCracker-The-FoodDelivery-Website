@@ -12,6 +12,8 @@ export default {
       border: "#dee2e6",
       tomato: "#ff6347",
       transparent: "transparent",
+      shimmerBg: "#e2e8f0",
+      shimmerContent: "#cbd5e1",
     },
     extend: {
       fontFamily: {

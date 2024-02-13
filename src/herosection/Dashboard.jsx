@@ -30,7 +30,7 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    !dashboardDetails && getDashboardData();
+    getDashboardData();
   }, []);
 
   return (

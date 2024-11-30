@@ -36,14 +36,14 @@ function RestoMenu() {
       setHeadingData((prev) => ({
         ...prev,
         charges:
-          response?.data?.cards[0]?.card?.card?.info?.feeDetails?.message,
-        location: response?.data?.cards[0]?.card?.card?.info?.locality,
-        area: response?.data?.cards[0]?.card?.card?.info?.areaName,
-        name: response?.data?.cards[0]?.card?.card?.info?.name,
+          response?.data?.cards[2]?.card?.card?.info?.feeDetails?.message,
+        location: response?.data?.cards[2]?.card?.card?.info?.locality,
+        area: response?.data?.cards[2]?.card?.card?.info?.areaName,
+        name: response?.data?.cards[2]?.card?.card?.info?.name,
       }));
 
       const filteredData =
-        response?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+        response?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
           (menu) => {
             return menu?.card?.card?.itemCards;
           }

@@ -31,7 +31,6 @@ function RestoMenu() {
         "&catalog_qa=undefined&submitAction=ENTER",
     };
     const response = await apiHandler(apiData);
-
     if (response?.data) {
       setHeadingData((prev) => ({
         ...prev,
